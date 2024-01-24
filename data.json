@@ -1,0 +1,192 @@
+{
+  "processes": [
+    "Discord",
+    "Revolt",
+    "steam",
+    "wallpaper32",
+    "wallpaper64",
+    "ShareX",
+    "TranslucentTB",
+    "GoogleDriveFS",
+    "AutoHotkey32",
+    "AutoHotkey64",
+    "AutoHotkeyA32",
+    "AutoHotkeyU32",
+    "AutoHotkeyU64",
+    "Auto",
+    "Auto.ahk"
+  ],
+  "packages": [
+    {
+      "winget": "flux.flux",
+      "choco": ""
+    },
+    {
+      "winget": "Mega.MEGASync",
+      "choco": ""
+    },
+    {
+      "winget": "Valve.Steam",
+      "choco": ""
+    },
+    {
+      "winget": "TheDocumentFoundation.LibreOffice",
+      "choco": ""
+    },
+    {
+      "winget": "File-New-Project.EarTrumpet",
+      "choco": ""
+    },
+    {
+      "winget": "xanderfrangos.twinkletray",
+      "choco": "twinkle-tray"
+    },
+    {
+      "winget": "VMware.WorkstationPlayer",
+      "choco": ""
+    },
+    {
+      "winget": "dotPDNLLC.paintdotnet",
+      "choco": "paint.net"
+    },
+    {
+      "winget": "Google.PlatformTools",
+      "choco": ""
+    },
+    {
+      "winget": "GodotEngine.GodotEngine",
+      "choco": ""
+    },
+    {
+      "winget": "Microsoft.Sysinternals.Autoruns",
+      "choco": "autoruns"
+    },
+    {
+      "winget": "Genymobile.scrcpy",
+      "choco": "scrcpy"
+    },
+    {
+      "winget": "CrystalDewWorld.CrystalDiskInfo.KureiKeiEdition",
+      "choco": ""
+    },
+    {
+      "winget": "CrystalDewWorld.CrystalDiskInfo.ShizukuEdition",
+      "choco": ""
+    },
+    {
+      "winget": "7zip.7zip",
+      "choco": "7zip"
+    },
+    {
+      "winget": "Audacity.Audacity",
+      "choco": "audacity"
+    },
+    {
+      "winget": "AutoHotkey.AutoHotkey",
+      "choco": "autohotkey"
+    },
+    {
+      "winget": "BlenderFoundation.Blender",
+      "choco": "blender"
+    },
+    {
+      "winget": "BlueStack.BlueStacks",
+      "choco": "bluestacks"
+    },
+    {
+      "winget": "Discord.Discord",
+      "choco": "discord"
+    },
+    {
+      "winget": "eloston.ungoogled-chromium",
+      "choco": "ungoogled-chromium"
+    },
+    {
+      "winget": "emoacht.Monitorian",
+      "choco": "monitorian"
+    },
+    {
+      "winget": "GIMP.GIMP",
+      "choco": "gimp"
+    },
+    {
+      "winget": "Git.Git",
+      "choco": "git"
+    },
+    {
+      "winget": "Henry++.simplewall",
+      "choco": "simplewall.install"
+    },
+    {
+      "winget": "IDRIX.VeraCrypt",
+      "choco": "veracrypt"
+    },
+    {
+      "winget": "LibreWolf.LibreWolf",
+      "choco": "librewolf",
+      "ask": true
+    },
+    {
+      "winget": "Microsoft.VisualStudioCode",
+      "choco": ""
+    },
+    {
+      "winget": "Microsoft.VisualStudio.2022.Community",
+      "choco": ""
+    },
+    {
+      "winget": "Microsoft.WindowsTerminal",
+      "choco": "microsoft-windows-terminal"
+    },
+    {
+      "winget": "MusicBee.MusicBee",
+      "choco": "musicbee"
+    },
+    {
+      "winget": "nepnep.neofetch-win",
+      "choco": ""
+    },
+    {
+      "winget": "Obsidian.Obsidian",
+      "choco": "obsidian"
+    },
+    {
+      "winget": "OBSProject.OBSStudio",
+      "choco": "obs-studio"
+    },
+    {
+      "winget": "OpenJS.NodeJS",
+      "choco": "nodejs"
+    },
+    {
+      "winget": "RARLab.WinRAR",
+      "choco": "winrar"
+    },
+    {
+      "winget": "Starship.Starship",
+      "choco": "starship"
+    },
+    {
+      "winget": "TechPowerUp.NVCleanstall",
+      "choco": ""
+    },
+    {
+      "winget": "VideoLAN.VLC",
+      "choco": "vlc"
+    },
+    {
+      "winget": "VSCodium.VSCodium",
+      "choco": "vscodium.install"
+    },
+    {
+      "winget": "Microsoft.PowerToys",
+      "choco": "powertoys",
+      "ask": true
+    },
+    {
+      "winget": "ProtonTechnologies.ProtonVPN",
+      "choco": "",
+      "ask": true
+    }
+  ]
+}
