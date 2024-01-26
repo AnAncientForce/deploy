@@ -1,0 +1,158 @@
+{
+  "essentials": [
+    {
+      "winget": "CodecGuide.K-LiteCodecPack.Full",
+      "choco": ""
+    },
+    {
+      "winget": "flux.flux",
+      "choco": ""
+    },
+    {
+      "winget": "Mega.MEGASync",
+      "choco": ""
+    },
+    {
+      "winget": "Valve.Steam",
+      "choco": ""
+    },
+    {
+      "winget": "Microsoft.Sysinternals.Autoruns",
+      "choco": "autoruns"
+    },
+    {
+      "winget": "Genymobile.scrcpy",
+      "choco": "scrcpy"
+    },
+    {
+      "winget": "CrystalDewWorld.CrystalDiskInfo.KureiKeiEdition",
+      "choco": ""
+    },
+    {
+      "winget": "CrystalDewWorld.CrystalDiskInfo.ShizukuEdition",
+      "choco": ""
+    },
+    {
+      "winget": "7zip.7zip",
+      "choco": "7zip"
+    },
+    {
+      "winget": "Audacity.Audacity",
+      "choco": "audacity"
+    },
+    {
+      "winget": "AutoHotkey.AutoHotkey",
+      "choco": "autohotkey"
+    },
+    {
+      "winget": "eloston.ungoogled-chromium",
+      "choco": "ungoogled-chromium"
+    },
+    {
+      "winget": "Git.Git",
+      "choco": "git"
+    },
+    {
+      "winget": "Henry++.simplewall",
+      "choco": "simplewall.install"
+    },
+    {
+      "winget": "IDRIX.VeraCrypt",
+      "choco": "veracrypt"
+    },
+    {
+      "winget": "LibreWolf.LibreWolf",
+      "choco": "librewolf",
+      "ask": true
+    },
+    {
+      "winget": "Microsoft.VisualStudioCode",
+      "choco": ""
+    },
+    {
+      "winget": "Microsoft.WindowsTerminal",
+      "choco": "microsoft-windows-terminal"
+    },
+    {
+      "winget": "Obsidian.Obsidian",
+      "choco": "obsidian"
+    },
+    {
+      "winget": "OBSProject.OBSStudio",
+      "choco": "obs-studio"
+    },
+    {
+      "winget": "OpenJS.NodeJS",
+      "choco": "nodejs"
+    },
+    {
+      "winget": "RARLab.WinRAR",
+      "choco": "winrar"
+    },
+    {
+      "winget": "Starship.Starship",
+      "choco": "starship"
+    },
+    {
+      "winget": "Microsoft.PowerToys",
+      "choco": "powertoys",
+      "ask": true
+    },
+    {
+      "winget": "ProtonTechnologies.ProtonVPN",
+      "choco": "",
+      "ask": true
+    },
+    {
+      "winget": "clsid2.mpc-hc",
+      "choco": ""
+    }
+  ],
+  "DESKTOP-KLDRBH4": [
+    {
+      "winget": "BlenderFoundation.Blender",
+      "choco": "blender"
+    },
+    {
+      "winget": "BlueStack.BlueStacks",
+      "choco": "bluestacks"
+    },
+    {
+      "winget": "Discord.Discord",
+      "choco": "discord"
+    },
+    {
+      "winget": "TechPowerUp.NVCleanstall",
+      "choco": ""
+    },
+    {
+      "winget": "GodotEngine.GodotEngine",
+      "choco": ""
+    },
+    {
+      "winget": "GIMP.GIMP",
+      "choco": "gimp"
+    },
+    {
+      "winget": "Google.PlatformTools",
+      "choco": ""
+    },
+    {
+      "winget": "xanderfrangos.twinkletray",
+      "choco": "twinkle-tray"
+    },
+    {
+      "winget": "Microsoft.VisualStudio.2022.Community",
+      "choco": ""
+    }
+  ],
+  "DESKTOP-V5JTGAB": [],
+  "uninstall": [
+    {
+      "winget": "GodotEngine.GodotEngine"
+    },
+    {
+      "winget": "MusicBee.MusicBee"
+    }
+  ]
+}

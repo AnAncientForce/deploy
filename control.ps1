@@ -148,13 +148,24 @@ function tweaks {
 function update {
     Write-Host "$poi_s Update $poi_e"
     # Start-Process -FilePath "$PSScriptRoot\update.bat" -Wait
+    copy_terminal
     get_packages
     success
 }
 
+function copy_terminal {
+    $source = Join-Path $PSScriptRoot ".config"
+    $dest = "C:\Users\$env:USERNAME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState"
+    
+    # Copy the contents of the source folder to the destination folder, overwriting existing files
+    Write-Host "Replacing terminal files..."
+    Copy-Item -Path $source\* -Destination $dest -Recurse -Force
+}
+
+
 function get_packages {
 
-    $jsonPath = Join-Path $PSScriptRoot "data.json"
+    $jsonPath = Join-Path $PSScriptRoot "packages.json"
 
     Write-Host "Automatic fallback is in action; If a package cannot be obtained via winget, a choco install will be attempted."
 
@@ -206,7 +217,7 @@ function get_packages {
             # Uninstall
             $packages = $jsonData.essentials
             foreach ($package in $packages) {
-                winget uninstall --id=$($package.winget) -n
+                winget uninstall --id=$($package.winget)
             }
         }
         else {
