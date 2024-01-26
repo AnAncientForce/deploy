@@ -224,7 +224,7 @@ function get_packages {
                 }
             }
             # Uninstall
-            $packages = $jsonData.essentials
+            $packages = $jsonData.$identifier
             foreach ($package in $packages) {
                 winget uninstall --id=$($package.winget)
             }
