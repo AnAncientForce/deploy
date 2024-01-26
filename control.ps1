@@ -172,7 +172,7 @@ function get_packages {
             }
 
             Write-Host "Checking winget packages:"
-            foreach ($package in $packages.packages) {
+            foreach ($package in $packages) {
                 if ($package.winget -eq "") {
                     Write-Host "No winget package is available for $($package.winget), now checking choco..."
 
@@ -204,7 +204,8 @@ function get_packages {
                 }
             }
             # Uninstall
-            foreach ($package in $packages.uninstall) {
+            $packages = $jsonData.essentials
+            foreach ($package in $packages) {
                 winget uninstall --id=$($package.winget) -n
             }
         }
