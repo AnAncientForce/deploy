@@ -180,10 +180,16 @@ function get_packages {
 
     if (Test-Path $jsonPath) {
 
+        $jsonData = Get-Content $jsonPath | ConvertFrom-Json
+
+        # Uninstall
+        Write-Host "$poi_s Uninstalling no longer wanted packages $poi_e"
+        $packages = $jsonData.uninstall
+        foreach ($package in $packages) {
+            winget uninstall --id=$($package.winget)
+        }
+
         for ($i = 1; $i -le 2; $i++) {
-
-
-            $jsonData = Get-Content $jsonPath | ConvertFrom-Json
             $packages = $jsonData.essentials
 
             if ($i -eq 2) {
@@ -223,14 +229,9 @@ function get_packages {
                     }
                 }
             }
-            # Uninstall
-            $packages = $jsonData.$identifier
-            foreach ($package in $packages) {
-                winget uninstall --id=$($package.winget)
-            }
         }
         else {
-            Write-Host "data.json not found in the script's directory."
+            Write-Host "$jsonPath not found"
         }
     }
 }
