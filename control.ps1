@@ -237,9 +237,10 @@ function get_packages {
                 Write-Host "No packages available"
             }
         }
-        else {
-            Write-Host "$jsonPath not found"
-        }
+        
+    }
+    else {
+        Write-Host "$jsonPath not found"
     }
 }
 
