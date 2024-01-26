@@ -16,7 +16,7 @@
     "Auto",
     "Auto.ahk"
   ],
-  "packages": [
+  "essentials": [
     {
       "winget": "CodecGuide.K-LiteCodecPack.Full",
       "choco": ""
@@ -32,10 +32,6 @@
     {
       "winget": "Valve.Steam",
       "choco": ""
-    },
-    {
-      "winget": "xanderfrangos.twinkletray",
-      "choco": "twinkle-tray"
     },
     {
       "winget": "Microsoft.Sysinternals.Autoruns",
@@ -91,10 +87,6 @@
       "choco": ""
     },
     {
-      "winget": "Microsoft.VisualStudio.2022.Community",
-      "choco": ""
-    },
-    {
       "winget": "Microsoft.WindowsTerminal",
       "choco": "microsoft-windows-terminal"
     },
@@ -117,10 +109,6 @@
     {
       "winget": "Starship.Starship",
       "choco": "starship"
-    },
-    {
-      "winget": "VSCodium.VSCodium",
-      "choco": "vscodium.install"
     },
     {
       "winget": "Microsoft.PowerToys",
@@ -165,7 +153,23 @@
     {
       "winget": "Google.PlatformTools",
       "choco": ""
+    },
+    {
+      "winget": "xanderfrangos.twinkletray",
+      "choco": "twinkle-tray"
+    },
+    {
+      "winget": "Microsoft.VisualStudio.2022.Community",
+      "choco": ""
     }
   ],
-  "packages_mac": []
+  "DESKTOP-V5JTGAB": [],
+  "uninstall": [
+    {
+      "winget": "GodotEngine.GodotEngine"
+    },
+    {
+      "winget": "MusicBee.MusicBee"
+    }
+  ]
 }

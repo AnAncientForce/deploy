@@ -154,19 +154,21 @@ function update {
 
 function get_packages {
 
-    for ($i = 1; $i -le 2; $i++) {
+    $jsonPath = Join-Path $PSScriptRoot "data.json"
 
-        $jsonPath = Join-Path $PSScriptRoot "data.json"
+    Write-Host "Automatic fallback is in action; If a package cannot be obtained via winget, a choco install will be attempted."
 
-        Write-Host "Automatic fallback is in action; If a package cannot be obtained via winget, a choco install will be attempted."
+    if (Test-Path $jsonPath) {
 
-        if (Test-Path $jsonPath) {
+        for ($i = 1; $i -le 2; $i++) {
+
 
             $jsonData = Get-Content $jsonPath | ConvertFrom-Json
-            $packages = $jsonData.packages
+            $packages = $jsonData.essentials
 
             if ($i -eq 2) {
                 $packages = $jsonData.$identifier
+                Write-Host "$poi_s Now installing computer specific packages $poi_e"
             }
 
             Write-Host "Checking winget packages:"
@@ -200,6 +202,10 @@ function get_packages {
                         winget install --id=$($package.winget) -e
                     }
                 }
+            }
+            # Uninstall
+            foreach ($package in $packages.uninstall) {
+                winget uninstall --id=$($package.winget) -n
             }
         }
         else {
