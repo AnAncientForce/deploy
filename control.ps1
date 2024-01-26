@@ -149,11 +149,20 @@ function update {
     Write-Host "$poi_s Update $poi_e"
     # Start-Process -FilePath "$PSScriptRoot\update.bat" -Wait
     copy_terminal
-    get_packages
+    paste_config
     success
 }
 
-function copy_terminal {
+function get_config {
+    $source = "C:\Users\$env:USERNAME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState"
+    $dest = Join-Path $PSScriptRoot ".config"
+    
+    # Copy the contents of the source folder to the destination folder, overwriting existing files
+    Write-Host "Replacing terminal files..."
+    Copy-Item -Path $source\* -Destination $dest -Recurse -Force
+}
+
+function paste_config {
     $source = Join-Path $PSScriptRoot ".config"
     $dest = "C:\Users\$env:USERNAME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState"
     
@@ -327,6 +336,7 @@ while ($true) {
     Write-Host "twe    = System Tweaks     (System Tweaks)"
     Write-Host "pac    = Get Packages      (via winget or choco)"
     Write-Host "yt     = YouTube Download  (video | playlist | playlist-audio | playlist-silent | playlist-thumbnail | channel-playlist-silent)"
+    Write-Host "get    = Update configs. Only run on main computer."
 
     $choice = Read-Host "`n$poi_s What would you like to do?"
     $words = $choice.Trim().Split(' ', [System.StringSplitOptions]::RemoveEmptyEntries)
@@ -357,6 +367,7 @@ while ($true) {
                 Write-Host "Insufficient parameters for 'yt' option"
             }
         }
+        "get" { get_config }
         "x" { Write-Host "Exiting script." ; exit }
         default { Write-Host "Invalid choice" }
     }
