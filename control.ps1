@@ -148,8 +148,8 @@ function tweaks {
 function update {
     Write-Host "$poi_s Update $poi_e"
     # Start-Process -FilePath "$PSScriptRoot\update.bat" -Wait
-    copy_terminal
     paste_config
+    get_packages
     success
 }
 
