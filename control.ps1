@@ -189,12 +189,14 @@ function get_packages {
             winget uninstall --id=$($package.winget)
         }
 
+        # Install
+        Write-Host "$poi_s Installing essential packages $poi_e"
         for ($i = 1; $i -le 2; $i++) {
             $packages = $jsonData.essentials
 
             if ($i -eq 2) {
+                Write-Host "$poi_s Installing computer specific packages $poi_e"
                 $packages = $jsonData.$identifier
-                Write-Host "$poi_s Now installing computer specific packages $poi_e"
             }
 
             Write-Host "Checking winget packages:"
