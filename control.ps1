@@ -200,7 +200,7 @@ function get_packages {
             }
 
             Write-Host "Checking winget packages:"
-            if ($packages.Count -eq 0) {
+            if ($packages.Count -ne 0) {
                 foreach ($package in $packages) {
                     if ($package.winget -eq "") {
                         Write-Host "No winget package is available for $($package.winget), now checking choco..."
