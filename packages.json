@@ -168,6 +168,12 @@
     },
     {
       "winget": "emoacht.Monitorian"
+    },
+    {
+      "winget": "Mozilla.Firefox"
+    },
+    {
+      "winget": "Google.Chrome"
     }
   ]
 }
