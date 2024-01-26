@@ -1,11 +1,11 @@
+
 $sep = "--------------------------------------------------"
 $poi_s = "--------------------------------------------------)"
 $poi_e = "(--------------------------------------------------"
-
 $main_letter = "D"
 $main_dir = "${main_letter}:\Library\scripts\deploy"
-
-
+$identifier = $env:COMPUTERNAME
+Write-Host "$identifier"
 
 function success {
     Write-Host "$poi_s Completed Successfully $poi_e"
@@ -153,50 +153,59 @@ function update {
 }
 
 function get_packages {
-    $jsonPath = Join-Path $PSScriptRoot "data.json"
 
-    Write-Host "Automatic fallback is in action; If a package cannot be obtained via winget, a choco install will be attempted."
+    for ($i = 1; $i -le 2; $i++) {
 
-    if (Test-Path $jsonPath) {
-        $packages = Get-Content $jsonPath | ConvertFrom-Json
+        $jsonPath = Join-Path $PSScriptRoot "data.json"
 
-        Write-Host "Checking winget packages:"
-        foreach ($package in $packages.packages) {
-            if ($package.winget -eq "") {
-                Write-Host "No winget package is available for $($package.winget), now checking choco..."
+        Write-Host "Automatic fallback is in action; If a package cannot be obtained via winget, a choco install will be attempted."
 
-                if ($package.choco -eq "") {
-                    Write-Host "No choco package fwas found for $($package.choco)"
-                    Write-Host "[!] No packages were found, skipped."
-                }
-                else {
-                    Write-Host "Now installing: $($package.choco)"
-                    choco install $($package.choco)
-                }
+        if (Test-Path $jsonPath) {
+
+            $jsonData = Get-Content $jsonPath | ConvertFrom-Json
+            $packages = $jsonData.packages
+
+            if ($i -eq 2) {
+                $packages = $jsonData.$identifier
             }
-            else {
-                Write-Host "Now installing: $($package.winget)"
-                if ($packages.ask) {
-                    if ($package.ask -eq $true) {
-                        $proceed = Read-Host "Proceed with install? (y/n)"
-                        if ($proceed -eq 'y') {
-                            winget install --id=$($package.winget) -e
-                        }
-                        else {
-                            Write-Host "Skipped: $($package.winget)"
-                        }
+
+            Write-Host "Checking winget packages:"
+            foreach ($package in $packages.packages) {
+                if ($package.winget -eq "") {
+                    Write-Host "No winget package is available for $($package.winget), now checking choco..."
+
+                    if ($package.choco -eq "") {
+                        Write-Host "No choco package fwas found for $($package.choco)"
+                        Write-Host "[!] No packages were found, skipped."
+                    }
+                    else {
+                        Write-Host "Now installing: $($package.choco)"
+                        choco install $($package.choco)
                     }
                 }
                 else {
-                    winget install --id=$($package.winget) -e
+                    Write-Host "Now installing: $($package.winget)"
+                    if ($package.ask) {
+                        if ($package.ask -eq $true) {
+                            $proceed = Read-Host "Proceed with install? (y/n)"
+                            if ($proceed -eq 'y') {
+                                winget install --id=$($package.winget) -e
+                            }
+                            else {
+                                Write-Host "Skipped: $($package.winget)"
+                            }
+                        }
+                    }
+                    else {
+                        winget install --id=$($package.winget) -e
+                    }
                 }
             }
         }
+        else {
+            Write-Host "data.json not found in the script's directory."
+        }
     }
-    else {
-        Write-Host "data.json not found in the script's directory."
-    }
-
 }
 
 function admin_update {

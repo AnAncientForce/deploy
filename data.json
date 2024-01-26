@@ -18,6 +18,10 @@
   ],
   "packages": [
     {
+      "winget": "CodecGuide.K-LiteCodecPack.Full",
+      "choco": ""
+    },
+    {
       "winget": "flux.flux",
       "choco": ""
     },
@@ -30,32 +34,8 @@
       "choco": ""
     },
     {
-      "winget": "TheDocumentFoundation.LibreOffice",
-      "choco": ""
-    },
-    {
-      "winget": "File-New-Project.EarTrumpet",
-      "choco": ""
-    },
-    {
       "winget": "xanderfrangos.twinkletray",
       "choco": "twinkle-tray"
-    },
-    {
-      "winget": "VMware.WorkstationPlayer",
-      "choco": ""
-    },
-    {
-      "winget": "dotPDNLLC.paintdotnet",
-      "choco": "paint.net"
-    },
-    {
-      "winget": "Google.PlatformTools",
-      "choco": ""
-    },
-    {
-      "winget": "GodotEngine.GodotEngine",
-      "choco": ""
     },
     {
       "winget": "Microsoft.Sysinternals.Autoruns",
@@ -86,28 +66,8 @@
       "choco": "autohotkey"
     },
     {
-      "winget": "BlenderFoundation.Blender",
-      "choco": "blender"
-    },
-    {
-      "winget": "BlueStack.BlueStacks",
-      "choco": "bluestacks"
-    },
-    {
-      "winget": "Discord.Discord",
-      "choco": "discord"
-    },
-    {
       "winget": "eloston.ungoogled-chromium",
       "choco": "ungoogled-chromium"
-    },
-    {
-      "winget": "emoacht.Monitorian",
-      "choco": "monitorian"
-    },
-    {
-      "winget": "GIMP.GIMP",
-      "choco": "gimp"
     },
     {
       "winget": "Git.Git",
@@ -139,14 +99,6 @@
       "choco": "microsoft-windows-terminal"
     },
     {
-      "winget": "MusicBee.MusicBee",
-      "choco": "musicbee"
-    },
-    {
-      "winget": "nepnep.neofetch-win",
-      "choco": ""
-    },
-    {
       "winget": "Obsidian.Obsidian",
       "choco": "obsidian"
     },
@@ -167,14 +119,6 @@
       "choco": "starship"
     },
     {
-      "winget": "TechPowerUp.NVCleanstall",
-      "choco": ""
-    },
-    {
-      "winget": "VideoLAN.VLC",
-      "choco": "vlc"
-    },
-    {
       "winget": "VSCodium.VSCodium",
       "choco": "vscodium.install"
     },
@@ -187,6 +131,41 @@
       "winget": "ProtonTechnologies.ProtonVPN",
       "choco": "",
       "ask": true
+    },
+    {
+      "winget": "clsid2.mpc-hc",
+      "choco": ""
     }
-  ]
+  ],
+  "DESKTOP-KLDRBH4": [
+    {
+      "winget": "BlenderFoundation.Blender",
+      "choco": "blender"
+    },
+    {
+      "winget": "BlueStack.BlueStacks",
+      "choco": "bluestacks"
+    },
+    {
+      "winget": "Discord.Discord",
+      "choco": "discord"
+    },
+    {
+      "winget": "TechPowerUp.NVCleanstall",
+      "choco": ""
+    },
+    {
+      "winget": "GodotEngine.GodotEngine",
+      "choco": ""
+    },
+    {
+      "winget": "GIMP.GIMP",
+      "choco": "gimp"
+    },
+    {
+      "winget": "Google.PlatformTools",
+      "choco": ""
+    }
+  ],
+  "packages_mac": []
 }
