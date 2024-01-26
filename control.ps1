@@ -20,7 +20,7 @@ function youtube {
         [string]$type,
         [string]$video
     )
-    $path = "C:/Users/Y/Downloads"
+    $path = "C:/Users/$env:USERNAME/Downloads"
     switch ($type) {
         "video" {
             yt-dlp -f mp4 -o "Z:\Discord Media\%(title)s.%(ext)s" $video
@@ -303,7 +303,7 @@ function shutdown {
         }
     }
     else {
-        Write-Host "data.json not found in the script's directory."
+        Write-Host "$jsonPath not found"
     }
 
     RWE

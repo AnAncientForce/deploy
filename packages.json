@@ -106,6 +106,10 @@
     {
       "winget": "clsid2.mpc-hc",
       "choco": ""
+    },
+    {
+      "winget": "yt-dlp.yt-dlp",
+      "choco": ""
     }
   ],
   "DESKTOP-KLDRBH4": [
@@ -144,15 +148,26 @@
     {
       "winget": "Microsoft.VisualStudio.2022.Community",
       "choco": ""
+    },
+    {
+      "winget": "ArduinoSA.IDE.stable",
+      "choco": ""
     }
   ],
-  "DESKTOP-V5JTGAB": [],
+  "DESKTOP-V5JTGAB": [
+    {
+      "winget": "dev47apps.DroidCam"
+    }
+  ],
   "uninstall": [
     {
       "winget": "GodotEngine.GodotEngine"
     },
     {
       "winget": "MusicBee.MusicBee"
+    },
+    {
+      "winget": "emoacht.Monitorian"
     }
   ]
 }
