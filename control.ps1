@@ -148,7 +148,7 @@ function tweaks {
 function update {
     Write-Host "$poi_s Update $poi_e"
     # Start-Process -FilePath "$PSScriptRoot\update.bat" -Wait
-    paste_config
+    # paste_config
     get_packages
     success
 }
@@ -200,36 +200,41 @@ function get_packages {
             }
 
             Write-Host "Checking winget packages:"
-            foreach ($package in $packages) {
-                if ($package.winget -eq "") {
-                    Write-Host "No winget package is available for $($package.winget), now checking choco..."
+            if ($packages.Count -eq 0) {
+                foreach ($package in $packages) {
+                    if ($package.winget -eq "") {
+                        Write-Host "No winget package is available for $($package.winget), now checking choco..."
 
-                    if ($package.choco -eq "") {
-                        Write-Host "No choco package fwas found for $($package.choco)"
-                        Write-Host "[!] No packages were found, skipped."
-                    }
-                    else {
-                        Write-Host "Now installing: $($package.choco)"
-                        choco install $($package.choco)
-                    }
-                }
-                else {
-                    Write-Host "Now installing: $($package.winget)"
-                    if ($package.ask) {
-                        if ($package.ask -eq $true) {
-                            $proceed = Read-Host "Proceed with install? (y/n)"
-                            if ($proceed -eq 'y') {
-                                winget install --id=$($package.winget) -e
-                            }
-                            else {
-                                Write-Host "Skipped: $($package.winget)"
-                            }
+                        if ($package.choco -eq "") {
+                            Write-Host "No choco package fwas found for $($package.choco)"
+                            Write-Host "[!] No packages were found, skipped."
+                        }
+                        else {
+                            Write-Host "Now installing: $($package.choco)"
+                            choco install $($package.choco)
                         }
                     }
                     else {
-                        winget install --id=$($package.winget) -e
+                        Write-Host "Now installing: $($package.winget)"
+                        if ($package.ask) {
+                            if ($package.ask -eq $true) {
+                                $proceed = Read-Host "Proceed with install? (y/n)"
+                                if ($proceed -eq 'y') {
+                                    winget install --id=$($package.winget) -e
+                                }
+                                else {
+                                    Write-Host "Skipped: $($package.winget)"
+                                }
+                            }
+                        }
+                        else {
+                            winget install --id=$($package.winget) -e
+                        }
                     }
                 }
+            }
+            else {
+                Write-Host "No packages available"
             }
         }
         else {
